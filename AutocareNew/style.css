@@ -1,0 +1,214 @@
+@font-face {
+    font-family: Typo-Round-Bold;
+    src: url(Font/Typo_Round_Bold_Demo.otf);
+}
+
+@font-face {
+    font-family: Typo-Round-Regular;
+    src: url(Font/Typo_Round_Regular_Demo.otf);
+}
+
+@font-face {
+    font-family: Inter-Medium;
+    src: url(Font/static/Inter_18pt-Medium.ttf);
+}
+
+@font-face {
+    font-family: Inter-MediumItalic;
+    src: url(Font/static/Inter_18pt-MediumItalic.ttf);
+}
+
+
+
+* {
+    border: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: #464B4F;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/************ HEADER ***********/
+
+header {
+    width: 100vw;
+    height: auto;
+
+    border-bottom: 1px solid gray;
+    border-radius: 0 0 10px 10px;
+    background-color: #C2C7CA;
+}
+
+header nav {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Texto */
+header nav ul a {
+    font-family: 'Typo-Round-Regular';
+    text-decoration: none;
+    color: #000000;
+}
+
+
+/************ BODY ***********/
+
+
+/********** Banner *********/
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Banner {
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 10vh;
+
+    width: 80vw;
+}
+
+.ImgBanner {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.Banner .Qualidade {
+    background-color: #D8EFF5;
+
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+
+    text-align: center;
+    gap: 20%;
+
+    border-radius: 0 20px 20px 0;
+}
+
+.Banner .Qualidade h1 {
+    font-family: 'Typo-Round-Bold';
+    font-size: 40px;
+
+    padding-top: 50px;
+}
+
+.Banner .Qualidade p {
+    font-family: 'Typo-Round-Regular';
+    font-size: 32px;
+}
+
+.Banner .Qualidade strong {
+    color: #F6880C;
+}
+
+/********** Sobre *********/
+
+.Sobre {
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 10vh;
+
+    width: 80vw;
+    height: 500px;
+
+    border-radius: 20px;
+}
+
+.Sobre .TextoVertical {
+    width: 20%;
+    background-color: #85C5DF;
+    border-radius: 0 20px 20px 0;
+
+    display: flex;
+    justify-content: center;
+}
+
+.Sobre .TextoVertical h1 {
+    font-family: 'Typo-Round-Bold';
+    font-size: 44px;
+
+    writing-mode: vertical-rl;
+    align-self: center;
+    text-align: right;
+
+    text-transform: uppercase;
+}
+
+/********** Sobre / Valores *********/
+
+.Sobre .Valores {
+    background-color: #C4E9F9;
+    width: 80%;
+    border-radius: 20px 0 0 20px;
+
+    padding: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Sobre .Valores .Pt1 {
+    height: 40%;
+    width: 70%;
+
+    border: 2px solid red;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Sobre .Valores .Pt2 {
+    height: 20%;
+    border: 1px solid black;
+}
+
+.Sobre .Valores .Pt3 {
+    height: 40%;
+    border: 1px solid red;
+}
+
+/********* Valores / Textos *********/
+.Sobre .Valores .Pt1 p {
+    font-family: 'Inter-MediumItalic';
+    font-size: 25px;
+
+    text-align: center;
+}
+
+.Sobre .Valores .Pt1 .yellow {
+    color: #F6880C;
+}
+
+.Sobre .Valores .Pt2 p {
+}
+
+.Sobre .Valores .Pt3 p {
+    font-family: 'Inter-MediumItalic';
+    font-size: 25px;
+
+    text-align: center;
+}

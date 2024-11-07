@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 600px;
+}
+
+/* Esconde o check da checkbox */
+input[type=checkbox] {
+    display: none;
+}
+
+/* Animação para desaparecer o elemento */
+@keyframes desaparecer {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Aplica a animação ao clicar */
+input[type=checkbox]:checked ~ label > img {
+    transform: scale(1.5);
+    cursor: zoom-out;
+    animation: desaparecer 1.8s forwards;
+}
+
+.img {
+    cursor: zoom-in;
+    transition: transform 1s;
+}
+
+/* Esconde o elemento de forma permanente */
+.hidden {
+    display: none;
+}

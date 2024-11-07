@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    margin: 50px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 100px;
+}
+
+p {
+    font-size: 50px;
+}
+
+section {
+    display: grid;
+    place-items: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Os elementos que tiverem a classe hidden não vão aparecer */
+.hidden {
+    opacity: 0;
+    /* O filter vai fazer os elementos aparecendo conforme o tempo */
+    /* filter: blur(15px); */
+    /* Os efeitos serão aplicados a todos os elementos */
+
+    transition: all 1s;
+    transform: translateX(-100%);
+    /* transition: all 100000000s;
+    transform: translateY(50%); */
+}
+
+/* Os elementos que tiverem a classe show vão aparecer */
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transition: all 1s;
+    transform: translateX(0%);
+}
+
+.avatar {
+    width: 200px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.logos {
+    display: flex;
+    gap: 20px;
+}
+
+/* Ao aolicar esse nth-child(2), quer dizer que eu estou querendo que o segundo filho ( ele possui 4 no tota; ) */
+.logos :nth-child(2){
+    transition-delay: 300ms;
+}
+
+.logos :nth-child(3){
+    transition-delay: 500ms;
+}
+
+.logos :nth-child(4){
+    transition-delay: 700ms;
+}
