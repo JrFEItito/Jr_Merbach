@@ -64,6 +64,8 @@ header nav ul a {
     font-family: 'Typo-Round-Regular';
     text-decoration: none;
     color: #000000;
+
+    font-size: 22px;
 }
 
 
@@ -172,9 +174,7 @@ main {
 
 .Sobre .Valores .Pt1 {
     height: 40%;
-    width: 70%;
-
-    border: 2px solid red;
+    width: 80%;
 
     display: flex;
     justify-content: center;
@@ -183,32 +183,96 @@ main {
 
 .Sobre .Valores .Pt2 {
     height: 20%;
-    border: 1px solid black;
+    width: 80%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .Sobre .Valores .Pt3 {
     height: 40%;
-    border: 1px solid red;
+    width: 80%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 /********* Valores / Textos *********/
 .Sobre .Valores .Pt1 p {
     font-family: 'Inter-MediumItalic';
-    font-size: 25px;
+    font-size: 22px;
 
     text-align: center;
 }
 
-.Sobre .Valores .Pt1 .yellow {
+.yellow {
     color: #F6880C;
 }
 
 .Sobre .Valores .Pt2 p {
+    font-family: 'Typo-Round-Bold';
+    font-size: 22px;
+
+    text-align: center;
 }
 
 .Sobre .Valores .Pt3 p {
     font-family: 'Inter-MediumItalic';
-    font-size: 25px;
+    font-size: 22px;
 
     text-align: center;
+}
+
+
+.Sobre .Valores .Def1 {
+    width: 40%;
+}
+
+.Sobre .Valores .Def2 {
+    width: 30%;
+}
+
+/********** PRODUTOS *********/
+
+.Produtos {
+    background-color: #A4C1CE;
+    height: 500px;
+    width: 80%;
+
+    margin-top: 10vh;
+    border-radius: 20px;
+
+    padding: 10px;
+}
+
+.Produtos .ForaCaixa {
+    width: 20vw;
+    height: 50px;
+
+    background-color: #85C5DF;
+    border-radius: 20px;
+
+    margin-top: -3%;
+    margin-left: 3%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Produtos .ForaCaixa p {
+    font-family: 'Typo-Round-Bold';
+    font-size: 22px;
+
+    text-align: center;
+}
+
+.Produtos .Card {
+    height: 60%;
+    width: 25%;
+
+    border-radius: 15px;
+    background-color: white;
 }
