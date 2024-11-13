@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Car Drift Animation with FBX</title>
+  <style>
+    body { margin: 0; overflow: hidden; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+  <!-- Importa Three.js via CDN -->
+  <script type="module">
+    import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
+    import { FBXLoader } from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/jsm/loaders/FBXLoader.js';
+
+    // Configuração da cena, câmera e renderizador
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Luz para iluminar o modelo
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    scene.add(ambientLight);
+    const pointLight = new THREE.PointLight(0xffffff, 0.8);
+    pointLight.position.set(5, 5, 5);
+    scene.add(pointLight);
+
+    // Carregar o modelo 3D com o FBXLoader
+    const loader = new FBXLoader();
+    let carModel;
+
+    loader.load(
+      './models/car_model.fbx', // Caminho para o modelo .fbx do carro
+      (fbx) => {
+        carModel = fbx;
+        carModel.scale.set(0.05, 0.05, 0.05); // Ajuste o tamanho do carro
+        carModel.position.set(-5, 0, 0); // Posição inicial à esquerda
+        scene.add(carModel);
+
+        animate(); // Inicia a animação após o modelo ser carregado
+      },
+      undefined,
+      (error) => {
+        console.error('Erro ao carregar o modelo:', error);
+      }
+    );
+
+    // Array de partículas de fumaça
+    const smokeParticles = [];
+
+    function createSmoke() {
+      const smokeGeometry = new THREE.SphereGeometry(0.1, 8, 8);
+      const smokeMaterial = new THREE.MeshBasicMaterial({ color: 0x888888, transparent: true, opacity: 0.5 });
+      const smoke = new THREE.Mesh(smokeGeometry, smokeMaterial);
+
+      if (carModel) {
+        smoke.position.copy(carModel.position);
+        smoke.position.x -= 0.5;
+        scene.add(smoke);
+        smokeParticles.push(smoke);
+      }
+    }
+
+    let driftProgress = 0;
+    function animate() {
+      requestAnimationFrame(animate);
+
+      if (carModel) {
+        driftProgress += 0.02;
+        carModel.position.x = -5 + driftProgress * 4;
+        carModel.position.z = Math.sin(driftProgress) * 0.5;
+        carModel.rotation.y = Math.sin(driftProgress) * 0.2;
+
+        createSmoke();
+
+        smokeParticles.forEach((particle, index) => {
+          particle.position.x -= 0.02;
+          particle.position.z += Math.random() * 0.1 - 0.05;
+          particle.position.y += 0.01;
+          particle.material.opacity -= 0.01;
+
+          if (particle.material.opacity <= 0) {
+            scene.remove(particle);
+            smokeParticles.splice(index, 1);
+          }
+        });
+
+        if (carModel.position.x > 5) {
+          scene.remove(carModel);
+          carModel = null;
+        }
+      }
+
+      renderer.render(scene, camera);
+    }
+
+    camera.position.set(0, 2, 8);
+    camera.lookAt(0, 0, 0);
+  </script>
+</body>
+</html>

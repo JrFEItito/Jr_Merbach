@@ -14,6 +14,11 @@
 }
 
 @font-face {
+    font-family: Inter-Regular;
+    src: url(Font/static/Inter_18pt-Regular.ttf);
+}
+
+@font-face {
     font-family: Inter-MediumItalic;
     src: url(Font/static/Inter_18pt-MediumItalic.ttf);
 }
@@ -23,6 +28,7 @@
 * {
     border: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -34,6 +40,11 @@ html {
     align-items: center;
 }
 
+body, html {
+    overflow-x: hidden;
+}
+
+
 /************ HEADER ***********/
 
 header {
@@ -41,22 +52,16 @@ header {
     height: auto;
 
     border-bottom: 1px solid gray;
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px 10px 10px 10px;
     background-color: #C2C7CA;
-}
-
-header nav {
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 header nav ul {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
+
+    padding: 10px;
 }
 
 /* Texto */
@@ -65,7 +70,7 @@ header nav ul a {
     text-decoration: none;
     color: #000000;
 
-    font-size: 22px;
+    font-size: 1.8vw;
 }
 
 
@@ -87,6 +92,7 @@ main {
     margin-top: 10vh;
 
     width: 80vw;
+    max-height: 450px;
 }
 
 .ImgBanner {
@@ -110,14 +116,14 @@ main {
 
 .Banner .Qualidade h1 {
     font-family: 'Typo-Round-Bold';
-    font-size: 40px;
+    font-size: 3vw;
 
-    padding-top: 50px;
+    padding-top: 10%;
 }
 
 .Banner .Qualidade p {
     font-family: 'Typo-Round-Regular';
-    font-size: 32px;
+    font-size: 2.2vw;
 }
 
 .Banner .Qualidade strong {
@@ -149,7 +155,7 @@ main {
 
 .Sobre .TextoVertical h1 {
     font-family: 'Typo-Round-Bold';
-    font-size: 44px;
+    font-size: 3.3vw;
 
     writing-mode: vertical-rl;
     align-self: center;
@@ -202,7 +208,7 @@ main {
 /********* Valores / Textos *********/
 .Sobre .Valores .Pt1 p {
     font-family: 'Inter-MediumItalic';
-    font-size: 22px;
+    font-size: 1.7vw;
 
     text-align: center;
 }
@@ -213,18 +219,17 @@ main {
 
 .Sobre .Valores .Pt2 p {
     font-family: 'Typo-Round-Bold';
-    font-size: 22px;
+    font-size: 1.7vw;
 
     text-align: center;
 }
 
 .Sobre .Valores .Pt3 p {
     font-family: 'Inter-MediumItalic';
-    font-size: 22px;
+    font-size: 1.7vw;
 
     text-align: center;
 }
-
 
 .Sobre .Valores .Def1 {
     width: 40%;
@@ -238,8 +243,9 @@ main {
 
 .Produtos {
     background-color: #A4C1CE;
-    height: 500px;
-    width: 80%;
+    /* height: 550px; */
+    /* max-height: 550px; */
+    width: 80vw;
 
     margin-top: 10vh;
     border-radius: 20px;
@@ -264,15 +270,340 @@ main {
 
 .Produtos .ForaCaixa p {
     font-family: 'Typo-Round-Bold';
-    font-size: 22px;
+    font-size: 1.7vw;
 
     text-align: center;
 }
 
-.Produtos .Card {
-    height: 60%;
-    width: 25%;
+.Produtos .ParteCima {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    margin-top: 1.5%;
+}
+
+.Produtos .ParteCima .Card {
+    height: 40%;
+    width: 22%;
 
     border-radius: 15px;
     background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    padding: 15px;
+}
+
+.Produtos .ParteCima .Card .ConteinerImg {
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-self: flex-start;
+    gap: 10%;
+}
+
+.Produtos .ParteCima .Card h1 {
+    font-size: 1.3vw;
+    font-family: 'Inter-Medium';
+}
+
+.Produtos .ParteCima .Card p {
+    font-size: 0.9vw;
+    font-family: 'Inter-Medium';
+    color: #757575;
+
+    margin-top: 8%;
+}
+
+/********** FEEDBACKS *********/
+
+.Feedbacks {
+    background-color: #A4C1CE;
+    height: 500px;
+    width: 100vw;
+
+    margin-top: 10vh;
+
+    padding: 10px;
+}
+
+.Feedbacks .ForaCaixa {
+    width: 20vw;
+    height: 50px;
+
+    background-color: #85C5DF;
+    border-radius: 20px;
+
+    margin-top: 2%;
+    margin-left: 3%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Feedbacks .ForaCaixa p {
+    font-family: 'Typo-Round-Bold';
+    font-size: 1.7vw;
+
+    text-align: center;
+}
+
+.Feedbacks .Feeds {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    height: 100%;
+
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    margin-top: -1%;
+}
+
+.Feedbacks .Feeds .FeedM {
+    height: 50%;
+    width: 28%;
+
+    border: 1px solid #0F8BBE;
+    border-radius: 20px;
+
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.Feedbacks .Feeds .FeedM .FotoPerfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 46%;    
+
+    margin-top: -18%;
+}
+
+.Feedbacks .Feeds .FeedM .TextoPerfil {
+    width: 85%;
+    font-size: 1.1vw;
+    text-align: center;
+
+    font-family: 'Inter-Regular';
+}
+
+.Feedbacks .Feeds .FeedM .NomePerfil {
+    font-family: 'Inter-Medium';
+    color: #0962B6;
+    font-size: 1.3vw;
+}
+
+.Feedbacks .Feeds .FeedM .Aspas {
+    width: 80%;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+/************** FeedP *************/
+
+.Feedbacks .Feeds .FeedP {
+    height: 65%;
+    width: 32%;
+
+    border: 1px solid #0F8BBE;
+    border-radius: 20px;
+
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.Feedbacks .Feeds .FeedP .FotoPerfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 46%;    
+
+    margin-top: -10%;
+}
+
+.Feedbacks .Feeds .FeedP .TextoPerfil {
+    width: 85%;
+    font-size: 1.1vw;
+    text-align: center;
+
+    font-family: 'Inter-Regular';
+    padding: 3%;
+}
+
+.Feedbacks .Feeds .FeedP .NomePerfil {
+    font-family: 'Inter-Medium';
+    color: #0962B6;
+    font-size: 1.3vw;
+}
+
+.Feedbacks .Feeds .FeedP .Aspas {
+    width: 80%;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/********** FOOTER *********/
+
+footer {
+    height: 400px;
+    width: 100vw;
+    background-color: #C2C7CA;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ContainerGrid {
+    width: 90%;
+    height: 90%;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.ContainerGrid .ContainerLogo {
+    display: flex;
+    flex-direction: row;
+
+    width: 50%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.ContainerGrid .ContainerLogo .Navegacao {
+    height: 70%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: auto;
+}
+
+.ContainerGrid .ContainerLogo .Navegacao a {
+    font-family: 'Typo-Round-Regular';
+    text-decoration: none;
+    color: black;
+    font-size: 1.8vw;
+}
+
+/********** FOOTER / Contato *********/
+
+.ContainerGrid .Contato {
+    height: 100%;
+    width: 30%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-left: 3%;
+}
+
+.ContainerGrid .Contato .Email {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 84%;
+    height: auto;
+}
+
+.ContainerGrid .Contato .Email p {
+    font-family: 'Inter-Regular';
+    font-size: 1.2vw;
+}
+
+.ContainerGrid .Contato .Endereco {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    height: 40%;
+    width: 100%;
+}
+
+.ContainerGrid .Contato .Endereco h1 {
+    font-family: 'Inter-Regular';
+    font-size: 2vw;
+}
+
+.ContainerGrid .Contato .Endereco p {
+    font-family: 'Inter-Regular';
+    font-size: 1.2vw;
+}
+
+/********** FOOTER / Mapa *********/
+
+.ContainerGrid .ConteinerMapa {
+    position: relative;
+    width: 600px;
+    height: 350px;
+}
+
+.ContainerGrid .ConteinerMapa iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/************* Padrão ************/
+
+@media only screen and (min-width: 1200px) {
+    
+}
+
+/************* Quebra 1 ************/
+
+/* Alteração somente necessária no footer */
+
+@media only screen and (max-width: 952px) {
+
+    footer .ContainerGrid .ContainerLogo .ImgLine {
+        display: none;
+    }
+}   
+
+/************* Quebra 2 ************/
+
+/* Alterar o conteúdo para ficar igual o figma */
+
+@media only screen and (min-width: 678px) {
+    
+}
+
+/************* Quebra 3 ************/
+
+/* Se precisar */
+
+@media only screen and (min-width: 678px) {
+    
 }
