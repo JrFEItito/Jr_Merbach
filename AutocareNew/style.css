@@ -40,7 +40,8 @@ html {
     align-items: center;
 }
 
-body, html {
+body,
+html {
     overflow-x: hidden;
 }
 
@@ -71,6 +72,11 @@ header nav ul a {
     color: #000000;
 
     font-size: 1.8vw;
+}
+
+header nav ul a:hover {
+    color: #F6880C;
+    transition: 0.2s;
 }
 
 
@@ -132,11 +138,32 @@ main {
 
 /********** Sobre *********/
 
+/* Os elementos que tiverem a classe valores não vão aparecer */
+.Sobre {
+    opacity: 0;
+    /* O filter vai fazer os elementos aparecendo conforme o tempo */
+    /* filter: blur(15px); */
+    /* Os efeitos serão aplicados a todos os elementos */
+
+    transition: all 2s;
+    transform: translateX(-100%);
+    /* transition: all 100000000s;
+    transform: translateY(50%); */
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transition: all 3s; 
+    transform: translateX(0%);
+}
+
+
 .Sobre {
     display: flex;
     flex-direction: row;
 
-    margin-top: 10vh;
+    margin-top: -90vh;
 
     width: 80vw;
     height: 500px;
@@ -241,16 +268,62 @@ main {
 
 /********** PRODUTOS *********/
 
+.Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 80vw;
+    height: 580px;
+
+    margin-top: 10vh;
+
+    background-color: white;
+    border-radius: 20px;
+}
+
+/* Esconde o check da checkbox */
+input[type=checkbox] {
+    display: none;
+}
+
+/* Animação para desaparecer o elemento */
+@keyframes desaparecer {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Aplica a animação ao clicar */
+input[type=checkbox]:checked ~ label > img {
+    display: flex;
+
+    transform: scale(1.5);
+    cursor: zoom-out;
+    animation: desaparecer 1.5s forwards;
+}
+
+.imgProdutos {
+    cursor: zoom-in;
+    transition: transform 1.5s;
+}
+
+
 .Produtos {
     background-color: #A4C1CE;
     /* height: 550px; */
     /* max-height: 550px; */
     width: 80vw;
 
-    margin-top: 10vh;
+    margin-top: -90vh;
     border-radius: 20px;
 
     padding: 10px;
+
+    z-index: -1;
 }
 
 .Produtos .ForaCaixa {
@@ -393,7 +466,7 @@ main {
     flex-direction: column;
     align-items: center;
 
-    height: 46%;    
+    height: 46%;
 
     margin-top: -18%;
 }
@@ -441,7 +514,7 @@ main {
     flex-direction: column;
     align-items: center;
 
-    height: 46%;    
+    height: 46%;
 
     margin-top: -10%;
 }
@@ -575,11 +648,54 @@ footer {
     height: 100%;
 }
 
-/************* Padrão ************/
+/********** Animação Carro *********/
 
-@media only screen and (min-width: 1200px) {
-    
+.car-section {
+    height: 100vh;
+    width: 100vw;
+
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
+
+.car {
+    position: absolute;
+    bottom: 100px;
+    left: -200px;
+    width: 200px;
+    opacity: 0;
+    transform: rotate(-10deg);
+    transition: all 2.2s ease-in-out;
+}
+
+.car img {
+    width: 100%;
+}
+
+/* Animação de drift atravessando a tela */
+.car.drift {
+    left: 100vw;
+    opacity: 1;
+    transform: rotate(12deg);
+}
+
+/* Carro parado na tela */
+.car.appear {
+    transition: none;
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    transform: translateX(-50%) rotate(0deg);
+}
+
+/************* Responsividade Padrão ************/
+
+@media only screen and (min-width: 1200px) {}
 
 /************* Quebra 1 ************/
 
@@ -590,20 +706,16 @@ footer {
     footer .ContainerGrid .ContainerLogo .ImgLine {
         display: none;
     }
-}   
+}
 
 /************* Quebra 2 ************/
 
 /* Alterar o conteúdo para ficar igual o figma */
 
-@media only screen and (min-width: 678px) {
-    
-}
+@media only screen and (min-width: 678px) {}
 
 /************* Quebra 3 ************/
 
 /* Se precisar */
 
-@media only screen and (min-width: 678px) {
-    
-}
+@media only screen and (min-width: 678px) {}

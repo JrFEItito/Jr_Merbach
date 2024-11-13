@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const carSection = document.getElementById("carSection");
     const car = document.getElementById("car");
     let animationTriggered = false;
-
+  
     window.addEventListener("scroll", () => {
       const carSectionPosition = carSection.getBoundingClientRect().top;
       const screenPosition = window.innerHeight / 1.2;

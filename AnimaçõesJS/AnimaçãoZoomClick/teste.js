@@ -1,6 +1,6 @@
 // Seleciona a imagem e o checkbox
 const checkbox = document.getElementById('zoom_img');
-const img = document.querySelector('.img');
+const img = document.querySelector('.imgProdutos');
 
 // Ouve quando a animação termina
 img.addEventListener('animationend', () => {

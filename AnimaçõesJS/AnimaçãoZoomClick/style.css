@@ -30,12 +30,12 @@ input[type=checkbox] {
 input[type=checkbox]:checked ~ label > img {
     transform: scale(1.5);
     cursor: zoom-out;
-    animation: desaparecer 1.8s forwards;
+    animation: desaparecer 1.5s forwards;
 }
 
-.img {
+.imgProdutos {
     cursor: zoom-in;
-    transition: transform 1s;
+    transition: transform 1.5s;
 }
 
 /* Esconde o elemento de forma permanente */
