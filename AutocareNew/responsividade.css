@@ -87,7 +87,7 @@
         display: none;
     }
 
-    
+
     .Sobre {
         margin-top: -10vh;
         transition: none;
@@ -104,14 +104,14 @@
         border-radius: 0 20px 20px 0;
 
         display: flex;
-        justify-content: center; 
+        justify-content: center;
 
-        border-radius: 20px 20px 0 0; 
+        border-radius: 20px 20px 0 0;
 
         /* rotate: -90deg; */
     }
 
-     .Sobre .TextoVertical h1 {
+    .Sobre .TextoVertical h1 {
         font-family: 'Typo-Round-Bold';
         font-size: 5vw;
 
@@ -123,14 +123,14 @@
     }
 
     .Sobre .Valores {
-       border-radius: 0 0 20px 20px;
-       width: 100%;
+        border-radius: 0 0 20px 20px;
+        width: 100%;
 
-       height: 50%;
+        height: 50%;
     }
 
     .Sobre .Valores .Pt1 {
-       display: none;
+        display: none;
     }
 
     .Sobre .Valores .Pt2 {
@@ -141,7 +141,7 @@
     }
 
     .Sobre .Valores .Pt2 p {
-       font-size: 2.5vw; 
+        font-size: 2.5vw;
     }
 
     .Sobre .Valores .Pt2 img {
@@ -161,6 +161,96 @@
         display: none;
     }
 
+    /*********** Produtos **********/
+
+    .Produtos .ForaCaixa {
+        margin-top: -6%;
+        margin-left: 38%;
+    }
+
+    .Produtos .ParteCima {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .Produtos .ParteCima .Card {
+        margin-top: 15px;
+
+        width: 40%;
+        height: 50%;
+    }
+
+    .Produtos .ParteCima .Card p {
+        display: none;
+    }
+
+    /* 
+    .Produtos .ParteCima .Card #2  {
+        display: none;
+    } */
+
+    /*********** Feedbacks **********/
+
+    .Feedbacks .ForaCaixa {
+        margin-left: 40%;
+    }
+
+    .Feedbacks .Feeds {
+        justify-self: center;
+        width: 40vw;
+        min-width: 350px;
+
+        gap: 10%;
+
+        overflow-x: auto;
+    }
+
+    .Feedbacks .Feeds .FeedM {
+        width: 50%;
+        height: 70%;
+
+        min-width: 300px;
+    }
+
+    .Feedbacks .Feeds .FeedM .FotoPerfil {
+        margin-top: -12%;
+    }
+
+    .Feedbacks .Feeds .FeedM .TextoPerfil {
+        font-size: 1.8vw;
+    }
+
+    .Feedbacks .Feeds .FeedM .NomePerfil {
+        font-size: 2.2vw;
+    }
+
+    .Feedbacks .Feeds .FeedP {
+        width: 50%;
+        height: 70%;
+
+        min-width: 300px;
+    }
+
+    .Feedbacks .Feeds .FeedP .FotoPerfil {
+        margin-top: -12%;
+    }
+
+    .Feedbacks .Feeds .FeedP .TextoPerfil {
+        font-size: 1.7vw;
+    }
+
+    .Feedbacks .Feeds .FeedP .NomePerfil {
+        font-size: 2.2vw;
+    }
+
+    /************* FOOTER ************/
+
+    footer {
+        
+    }
+
 }
 
 
@@ -168,6 +258,4 @@
 
 /* Medidas necessárias abaixo de 450 ( ajustar o conteúdo ) */
 
-@media only screen and (min-width: 500px) {
-    
-}
+@media only screen and (min-width: 500px) {}

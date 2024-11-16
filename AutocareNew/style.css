@@ -42,7 +42,7 @@ html {
 
 body,
 html {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 
@@ -310,7 +310,6 @@ main {
 
 
 
-
 .Produtos {
     background-color: #A4C1CE;
     /* height: 550px; */
@@ -405,7 +404,9 @@ main {
     margin-top: 15vh;
 
     padding: 10px;
+
 }
+
 
 .Feedbacks .ForaCaixa {
     width: 20vw;
@@ -660,7 +661,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .car {
