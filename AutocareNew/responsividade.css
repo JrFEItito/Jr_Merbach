@@ -1,0 +1,173 @@
+/************* Quebra 1 ************/
+
+/* Pequenas alterações para o conteúdo ficar certo */
+
+
+@media only screen and (max-width: 1200px) {
+    .container {
+        display: none;
+    }
+
+    .Produtos {
+        margin-top: 10vh;
+        margin-bottom: 0;
+    }
+
+    .Feedbacks {
+        margin-top: 10vh;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+
+    footer .ContainerGrid .ContainerLogo .ImgLine {
+        display: none;
+    }
+}
+
+
+/************* Quebra 2 ************/
+
+/* Alterar o conteúdo para ficar igual o figma */
+
+@media only screen and (max-width: 800px) {
+
+    /************* HEADER ************/
+
+    header {
+        border-radius: 0 0 20px 20px;
+    }
+
+    header nav ul a {
+        display: none;
+    }
+
+    /************* BODY ************/
+
+
+    /*********** Banner **********/
+
+    .Banner {
+        display: flex;
+        flex-direction: column;
+
+        max-height: fit-content;
+    }
+
+    .Banner .ImgBanner {
+        width: 100%;
+        background-image: url('https://s3-alpha-sig.figma.com/img/5ee0/b41e/47062b7aab48af9a2fb5e29244517f86?Expires=1732492800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GopiR6nn8rPL6ZP0iLQkoFpzXhoD7STPb2w8rYFWOhJOAk~Rj7veV80JKT4PoUE0EXwW2zey-UpSkuKdnrup7j7PlnCfYbinsSQy~UIz3d8TUkxXELPw2UCV8kIAPUzKaw2pg2EM2U4QzSbF8~Q0NsM9vYYXIkeCEAVVAE3r613GjaDHUkyvyROF9cHOUQfsZbnn76pLEBytis0qaE7WDBWcjXJdZuPjFNguhKi9rKJ3ZhCM5ocqB3nV8-Kddne~dXCVyn0tM2ct2vw18RguoTC~qX9kQ1Fb0dknH8s~K9naSVdpVHsI~lGdTZbgb4DFM6O0KH38B3iT15nkrqUh2Q__');
+
+        border-radius: 20px 20px 0 0;
+    }
+
+    .Banner .Qualidade {
+        height: 350px;
+        border-radius: 0 0 20px 20px;
+
+        padding: 10%;
+    }
+
+    .Banner .Qualidade h1 {
+        font-size: 6vw;
+        padding-top: 5%;
+    }
+
+    .Banner .Qualidade p {
+        font-size: 3.2vw;
+        padding-top: 5%;
+
+        height: 100%;
+    }
+
+    /*********** Sobre **********/
+
+    .car-section {
+        display: none;
+    }
+
+    
+    .Sobre {
+        margin-top: -10vh;
+        transition: none;
+
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .Sobre .TextoVertical {
+        width: 80vw;
+        height: 20%;
+
+        background-color: #85C5DF;
+        border-radius: 0 20px 20px 0;
+
+        display: flex;
+        justify-content: center; 
+
+        border-radius: 20px 20px 0 0; 
+
+        /* rotate: -90deg; */
+    }
+
+     .Sobre .TextoVertical h1 {
+        font-family: 'Typo-Round-Bold';
+        font-size: 5vw;
+
+        writing-mode: horizontal-tb;
+        align-self: center;
+        text-align: right;
+
+        text-transform: uppercase;
+    }
+
+    .Sobre .Valores {
+       border-radius: 0 0 20px 20px;
+       width: 100%;
+
+       height: 50%;
+    }
+
+    .Sobre .Valores .Pt1 {
+       display: none;
+    }
+
+    .Sobre .Valores .Pt2 {
+        display: flex;
+        flex-direction: column;
+
+        height: 70%;
+    }
+
+    .Sobre .Valores .Pt2 p {
+       font-size: 2.5vw; 
+    }
+
+    .Sobre .Valores .Pt2 img {
+        rotate: 90deg;
+        height: 3%;
+    }
+
+    .Sobre .Valores .Pt3 {
+        width: 100vw;
+    }
+
+    .Sobre .Valores .Pt3 p {
+        font-size: 2.2vw;
+    }
+
+    .Sobre .Valores .Pt3 .Def2 {
+        display: none;
+    }
+
+}
+
+
+/************* Quebra 3 ************/
+
+/* Medidas necessárias abaixo de 450 ( ajustar o conteúdo ) */
+
+@media only screen and (min-width: 500px) {
+    
+}
