@@ -1,11 +1,17 @@
-// Seleciona a imagem e o checkbox
-const checkbox = document.getElementById('zoom_img');
+// Seleciona o container e a imagem
+const container = document.querySelector('.container');
 const img = document.querySelector('.imgProdutos');
 
-// Ouve quando a animação termina
-img.addEventListener('animationend', () => {
-    // Se a imagem estiver marcada para desaparecer, esconde-a permanentemente
-    if (checkbox.checked) {
-        img.classList.add('hidden');
-    }
+// Adiciona o evento de clique na imagem
+img.addEventListener('click', () => {
+    // Adiciona a classe para ampliar e desaparecer a imagem
+    img.classList.add('imgDesaparecendo');
+
+    // Sincroniza o desaparecimento do container com o da imagem
+    container.classList.add('hiddenBox');
+
+    // Após a animação, esconde o container permanentemente
+    container.addEventListener('animationend', () => {
+        container.classList.add('hiddenBoxFinal');
+    });
 });

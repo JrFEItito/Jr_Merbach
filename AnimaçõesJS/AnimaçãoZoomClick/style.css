@@ -9,14 +9,10 @@ body {
     justify-content: center;
     width: 100%;
     height: 600px;
+    transition: opacity 1.5s ease-in-out;
 }
 
-/* Esconde o check da checkbox */
-input[type=checkbox] {
-    display: none;
-}
-
-/* Animação para desaparecer o elemento */
+/* Animação para desaparecer o container */
 @keyframes desaparecer {
     0% {
         opacity: 1;
@@ -26,19 +22,27 @@ input[type=checkbox] {
     }
 }
 
-/* Aplica a animação ao clicar */
-input[type=checkbox]:checked ~ label > img {
-    transform: scale(1.5);
-    cursor: zoom-out;
+/* Classe para desaparecer o container */
+.hiddenBox {
     animation: desaparecer 1.5s forwards;
+    pointer-events: none; /* Evita cliques durante o desaparecimento */
+}
+
+.hiddenBoxFinal {
+    display: none; /* Esconde o container permanentemente */
 }
 
 .imgProdutos {
-    cursor: zoom-in;
-    transition: transform 1.5s;
+    cursor: pointer;
+    transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
 }
 
-/* Esconde o elemento de forma permanente */
-.hidden {
-    display: none;
+.imgProdutos:hover {
+    transform: scale(1.1); /* Efeito ao passar o mouse */
+}
+
+/* Quando clicada, a imagem amplia antes de desaparecer */
+.imgDesaparecendo {
+    transform: scale(1.5); /* Amplia a imagem */
+    opacity: 0; /* Desaparece junto com o container */
 }

@@ -268,48 +268,46 @@ main {
 
 /********** PRODUTOS *********/
 
-.Container {
+.container {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 80vw;
-    height: 580px;
-
     margin-top: 10vh;
+    width: 80vw;
+    height: 600px;
 
-    background-color: white;
+    background-color: #A4C1CE;
     border-radius: 20px;
+    transition: opacity 1.5s ease-in-out;
 }
 
-/* Esconde o check da checkbox */
-input[type=checkbox] {
-    display: none;
+.container.hiddenBox {
+    opacity: 0; /* Esconde o container */
+    pointer-events: none; /* Impede interações enquanto está oculto */
 }
 
-/* Animação para desaparecer o elemento */
-@keyframes desaparecer {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-/* Aplica a animação ao clicar */
-input[type=checkbox]:checked ~ label > img {
-    display: flex;
-
-    transform: scale(1.5);
-    cursor: zoom-out;
-    animation: desaparecer 1.5s forwards;
+.bateria {
+    position: absolute; /* Torna a bateria independente do layout */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ajuste a largura conforme necessário */
+    height: 100%; /* Ajuste a altura conforme necessário */
+    transition: opacity 1s ease-in-out;
 }
 
 .imgProdutos {
-    cursor: zoom-in;
-    transition: transform 1.5s;
+    transition: opacity 1.5s ease-in-out;
+    cursor: pointer;
 }
+
+.imgDesaparecendo {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+
+
 
 
 .Produtos {
@@ -692,10 +690,6 @@ footer {
     bottom: 50px;
     transform: translateX(-50%) rotate(0deg);
 }
-
-/************* Responsividade Padrão ************/
-
-@media only screen and (min-width: 1200px) {}
 
 /************* Quebra 1 ************/
 
