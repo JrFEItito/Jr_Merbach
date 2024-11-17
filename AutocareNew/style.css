@@ -642,6 +642,8 @@ footer {
     position: relative;
     width: 600px;
     height: 350px;
+
+    margin-left: 10px;
 }
 
 .ContainerGrid .ConteinerMapa iframe {
