@@ -29,74 +29,12 @@
 
 /************* Quebra 2 ************/
 
-/* Menu Hmaburguer */
+/* Some com o Menu Hmaburguer */
 
 @media only screen and (min-width: 800px) {
-    header .menu-hamburguer {
+    header .menu {
         display: none;
     }
-
-    .menu-container {
-        position: relative;
-    }
-
-    .hamburger-menu {
-        font-size: 30px;
-        cursor: pointer;
-        padding: 10px;
-        background-color: #333;
-        color: white;
-        border: none;
-    }
-
-    /* nav {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        display: none;
-    }
-
-    nav ul {
-        list-style-type: none;
-        padding: 10px;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-    } */
-
-    .hidden {
-        display: none;
-    }
-
-    /* .section {
-        padding: 50px;
-        margin: 20px 0;
-    }
-
-    #quem-somos {
-        background-color: lightblue;
-    }
-
-    #produtos {
-        background-color: lightgreen;
-    }
-
-    #feedbacks {
-        background-color: lightcoral;
-    }
-
-    #contato {
-        background-color: lightgoldenrodyellow;
-    } */
 }
 
 
@@ -112,9 +50,102 @@
         border-radius: 0 0 20px 20px;
     }
 
-    header nav ul a {
+    header .nav .ul a {
         display: none;
     }
+
+    header .menu {
+        padding-left: 30px;
+        padding-top: 30px;
+    }
+
+    /* Menu Hamburguer */
+    header .menu .menu-faketrigger {
+        position: absolute;
+        z-index: 1000;
+        width: 40px;
+        height: 50px;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    header .menu .menu-lines {
+        position: absolute;
+        z-index: 999;
+        width: 35px;
+        height: 35px;
+
+        margin-top: 10px;
+        margin-left: 5px;
+    }
+
+    header .menu .menu-lines span {
+        display: block;
+        width: 35px;
+        height: 5px;
+        margin-bottom: 10px;
+        background-color: black;
+        border-radius: 3px;
+        transition: all ease 0.5s;
+    }
+
+    /* Aqui eu aplico a cor ao menu hamburguer quando o checked está ativo */
+    .menu .menu-faketrigger:checked ~ .menu-lines span {
+        /* background-color: #85C5DF; */
+    }
+
+    /* Aqui é cada um dos span, no caso o 1, o 2 e o 3. Vai fazer o efeito de transformar o menu em um X  */
+
+    .menu .menu-faketrigger:checked ~ .menu-lines span:nth-child(1) {
+        transform-origin: 0% 0%;
+        transform: rotate(45deg) scaleX(1.25);
+    }
+
+    .menu .menu-faketrigger:checked ~ .menu-lines span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu .menu-faketrigger:checked ~ .menu-lines span:nth-child(3) {
+        transform-origin: 0% 100%;
+        transform: rotate(-45deg) scaleX(1.25);
+    }
+
+    .menu ul {
+         position: absolute;
+         z-index: 998;
+         left: 0;
+         top: 0;
+         width: 40%;
+         height: 50vh;
+         padding-top: 100px;
+         background-color: #ededed;
+
+         margin-left: -40%;
+         transition: all ease 0.4s;
+
+         border-radius: 0 0 5px 5px;
+    }
+
+    .menu .menu-faketrigger:checked ~ ul {
+        margin-left: 0;
+    }
+
+    .menu ul li {
+        padding: 10px 30px;
+    }
+
+    .menu ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 22px;
+        transition: all ease 0.5s;
+    }
+
+    .menu ul li a:hover {
+        color: white;
+    }
+
+
 
     /************* BODY ************/
 
@@ -381,4 +412,23 @@
 
 /* Medidas necessárias abaixo de 450 ( ajustar o conteúdo ) */
 
-@media only screen and (min-width: 500px) {}
+@media only screen and (max-width: 500px) {
+
+    /* HEADER */
+
+    header .menu .menu-faketrigger {
+        width: 20px;
+        height: 30px;
+    }
+    header .menu .menu-lines span {
+        width: 25px;
+        height: 3px;
+    }
+
+    /* fOOTER */
+
+    .ContainerGrid .Contato {
+        margin-right: 15vw;
+    }
+
+}
