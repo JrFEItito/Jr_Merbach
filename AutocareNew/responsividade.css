@@ -14,6 +14,7 @@
     }
 
     .Feedbacks {
+        overflow-x: hidden;
         margin-top: 10vh;
     }
 
@@ -29,15 +30,13 @@
 
 /************* Quebra 2 ************/
 
-/* Some com o Menu Hmaburguer */
+/* Some com o Menu Hamburguer */
 
 @media only screen and (min-width: 800px) {
     header .menu {
         display: none;
     }
 }
-
-
 
 
 /* Alterar o conteúdo para ficar igual o figma */
@@ -417,18 +416,40 @@
     /* HEADER */
 
     header .menu .menu-faketrigger {
-        width: 20px;
+        width: 25px;
         height: 30px;
     }
+
+    
+    header .menu .menu-lines {
+        margin-top: -0px;
+    }
+    
     header .menu .menu-lines span {
-        width: 25px;
-        height: 3px;
+        display: block;
+        width: 35px;
+        height: 5px;
+        margin-bottom: 10px;
+        background-color: black;
+        border-radius: 3px;
+        transition: all ease 0.5s;
     }
 
     /* fOOTER */
 
     .ContainerGrid .Contato {
         margin-right: 15vw;
+    }
+
+    .menu ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
+        transition: all ease 0.5s;
+    }
+
+    header .nav img {
+        width: 20%;
     }
 
 }
