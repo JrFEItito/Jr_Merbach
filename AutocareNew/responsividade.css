@@ -55,7 +55,7 @@
 
     header .menu {
         padding-left: 30px;
-        padding-top: 30px;
+        padding-top: 15px;
     }
 
     /* Menu Hamburguer */
@@ -133,15 +133,21 @@
         padding: 10px 30px;
     }
 
+    .menu ul img {
+        width: 20%;
+    }
+
     .menu ul li a {
         text-decoration: none;
         color: black;
         font-size: 22px;
         transition: all ease 0.5s;
+        font-family: 'Inter-Regular';
     }
 
     .menu ul li a:hover {
         color: white;
+        font-family: 'Inter-Medium';
     }
 
 
